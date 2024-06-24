@@ -114,12 +114,13 @@ function Header() {
                     </ul>
                 </div>
 
-                <div className="flex items-center jusitfy-center gap-4">
-                    <div className="relative cursor-pointer" onClick={displayCart}>
+                <div className="relative flex items-center jusitfy-center gap-4">
+                    <div className=" cursor-pointer" onClick={displayCart}>
                         <svg className="w-[31px] h-[31px] text-gray-700  hover:text-gray-950" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.1" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
                         </svg>
-                        <div className={`${cartData.length > 0 ? "block" : "hidden"} w-4 h-4 rounded-lg absolute top-[-10px] left-4 bg-purple-800 text-white text-center  text-[5px] font-serif`}>{cartData.length}</div>
+                        <div className={`${cartData.length > 0 ? "block" : "hidden"} w-4 h-4 rounded-lg  absolute top-[-10px] left-4 bg-purple-800 text-white text-center  text-[5px] font-serif`}
+                            >{cartData.length}</div>
                     </div>
                     <div className="sm:hidden cursor-pointer" onClick={displayMenu}>
                         <svg className="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
