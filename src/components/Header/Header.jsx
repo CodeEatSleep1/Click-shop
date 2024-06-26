@@ -122,7 +122,7 @@ function Header() {
                 </div>
 
                 <div className=" relative flex items-center jusitfy-center gap-4">
-                    <div cartquantity={cartData.length} className={`cursor-pointer ${cartData.length > 0 ? "after:block" : "after:hidden"} after:content-[attr(cartquantity)]  after:rounded-full  after:absolute after:top-[-10px] after:left-4  after:bg-purple-800 after:text-white after:w-4 after:h-4  after:pl-[5px] after:pt-[4px] sm:after:pt-[1px]  sm:after:text-[4px] after:font-serif`} onClick={displayCart} ref={cartIcon}>
+                    <div cartquantity={cartData.length} className={`cursor-pointer ${cartData.length > 0 ? "after:block" : "after:hidden"} after:content-[attr(cartquantity)]  after:rounded-full  after:absolute after:top-[-10px] after:left-4  after:bg-purple-800 after:text-white after:w-4 after:h-4  after:text-sm  sm:after:text-[4px] after:text-center`} onClick={displayCart} ref={cartIcon}>
                         <svg className="w-[31px] h-[31px] text-gray-700  hover:text-gray-950" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.1" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
                         </svg>
