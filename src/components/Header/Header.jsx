@@ -12,6 +12,7 @@ function Header() {
 
     const [sticky, setSticky] = useState(false)
     const cart = useRef(null)
+    const cartIcon=useRef(null)
     const menu = useRef(null)
     const overlay = useRef(null)
     const { cartData } = useEcommerce()
@@ -32,7 +33,7 @@ function Header() {
         }
 
         const handleCart = (e) => {
-            if (!cart.current.contains(e.target)) {
+            if (!cart.current.contains(e.target) && !cartIcon.current.contains(e.target)) {
                 closeDisplayCart()
             }
         }
@@ -46,18 +47,24 @@ function Header() {
         }
     }, [])
 
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+    const displayCart = async () => {
 
-    const displayCart = () => {
+        cart.current.style.display="block"
+        await sleep(100);
         cart.current.style.right = "1px";
         overlay.current.style.display = "block"
-        // cart.current.style.display="block"
+
     }
-    const closeDisplayCart = () => {
-        // console.log("close")
+
+    const closeDisplayCart = async () => {
+
         cart.current.style.right = "-550px";
         overlay.current.style.display = "none"
-        // cart.current.style.display="none"
-        
+        await sleep(1000);
+        cart.current.style.display="none"
 
     }
     const displayMenu = () => {
@@ -115,7 +122,7 @@ function Header() {
                 </div>
 
                 <div className=" relative flex items-center jusitfy-center gap-4">
-                    <div cartquantity={cartData.length} className={`cursor-pointer ${cartData.length > 0 ? "after:block" : "after:hidden"} after:content-[attr(cartquantity)] after:w-4 after:h-4 after:rounded-lg  after:absolute after:top-[-10px] after:left-4 after:bg-purple-800 after:text-white after:text-center  after:text-[5px] after:font-serif`} onClick={displayCart}>
+                    <div cartquantity={cartData.length} className={`cursor-pointer ${cartData.length > 0 ? "after:block" : "after:hidden"} after:content-[attr(cartquantity)]  after:rounded-full  after:absolute after:top-[-12px] after:left-4  after:bg-purple-800 after:text-white after:w-4 after:h-4  after:pl-[5px] after:pt-[1px]  after:text-[4px] after:font-serif`} onClick={displayCart} ref={cartIcon}>
                         <svg className="w-[31px] h-[31px] text-gray-700  hover:text-gray-950" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.1" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
                         </svg>
@@ -133,7 +140,7 @@ function Header() {
             </div>
 
             {/* shoping cart */}
-            <div className=" w-full  md:w-[65%] lg:w-3/6 xl:w-5/12 h-screen bg-slate-100  py-6 px-5 fixed z-50 top-0 right-[-550px] transition-all duration-700 ease-in-out" ref={cart}>
+            <div className="hidden w-full  md:w-[65%] lg:w-3/6 xl:w-5/12 h-screen bg-slate-100  py-6 px-5 fixed z-50 top-0 right-[-550px] transition-all duration-700 ease-in-out" ref={cart}>
                 <div className="w-full h-[12%] flex justify-between items-center">
                     <h1 className="font-bold">Shopping Cart item &#40;{cartData.length}&#x29;</h1>
                     <p className="cursor-pointer" onClick={closeDisplayCart}>&#10006;</p>
