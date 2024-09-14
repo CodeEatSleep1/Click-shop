@@ -13,6 +13,7 @@ export const EcommerceContextProvider = ({ children }) => {
   const [Trending_Products, setTrending_Products] = useState([])
   const [categoryTitle, setCategoryTitle] = useState("ALL")
   const [cartData, setcartData] = useState([])
+  const [themeMode,setThemeMode]=useState("light")
 
   const addCart = ({ ...data }) => {
     let exist = false
@@ -70,7 +71,7 @@ export const EcommerceContextProvider = ({ children }) => {
 }, [cartData])
 
   return (
-    <EcommerceContext.Provider value={{ All_Products, setAll_Products, Latest_Products, setLatest_Products, Trending_Products, setTrending_Products, categoryTitle, setCategoryTitle, cartData, addCart, removeCart, decreaseCartQuantity, increaseCartQuantity }}>
+    <EcommerceContext.Provider value={{ All_Products, setAll_Products, Latest_Products, setLatest_Products, Trending_Products, setTrending_Products, categoryTitle, setCategoryTitle, cartData, addCart, removeCart, decreaseCartQuantity, increaseCartQuantity,themeMode,setThemeMode }}>
       {children}
     </EcommerceContext.Provider>
   )

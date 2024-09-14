@@ -13,9 +13,9 @@ import {Outlet} from 'react-router-dom'
 
 
   return (
-    <div className="scroll-smooth ">
+    <div className="scroll-smooth dark:bg-slate-400 ">
     <Header/>
-    <main className="mt-32">
+    <main className="pt-32">
       <Outlet/>
     </main>
     <Footer/>

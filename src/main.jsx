@@ -12,6 +12,7 @@ import Electronics from './components/Categories/Electronics.jsx'
 import Mens from './components/Categories/Mens.jsx'
 import Womens from './components/Categories/Womens.jsx'
 import Jewelery from './components/Categories/Jewelery.jsx'
+import ErrorPage from './components/ErrorPage.jsx'
 
 
 
@@ -21,11 +22,11 @@ const router= createBrowserRouter([
     element:<App/>,
     children:[
       {
-        path:"/",
+        path:"",
         element:<Home/>
       },
       {
-        path:"/categories",
+        path:"categories",
         element:<Category/>,
         children:[
           {
@@ -51,8 +52,12 @@ const router= createBrowserRouter([
         ]
       },
       {
-        path:"/products/:slug",
+        path:"products/:slug",
         element:<Products/>
+      },
+      {
+        path:"*",
+        element:<ErrorPage/>
       }
     ]
   }

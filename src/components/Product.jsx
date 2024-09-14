@@ -37,7 +37,7 @@ function Product() {
                 <div className="w-full h-auto flex flex-col md:flex-row mt-32 md:mt-0 gap-4 md:gap-0 items-center  ">
                     <div className=" w-full md:w-1/2  flex flex-col items-center">
                         <div >
-                            <img src={image} alt="" width="300px" className=" h-[300px] p-5" />
+                            <img src={image} alt="" width="300px" className=" h-[300px] p-5 bg-white" />
                         </div>
                         <div className="flex justify-around items-center">
                             <img src="https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg" alt="" width="100px" className="h-[100px] p-3  hover:shadow-lg hover:border-slate-400 hover:border-[1px]"

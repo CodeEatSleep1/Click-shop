@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, json, useParams } from "react-router-dom";
-import Logo from "../../assets/Logo.jpg"
+import Logo from "../../assets/Logo.png";
 import { useRef } from "react";
 import CartItem from "../CartItem";
 import { useEcommerce } from "../../Context/EcommerceContext";
+// import ThemeBtn from "../ThemeBtn";
+
 
 
 
@@ -81,12 +83,12 @@ function Header() {
     }
 
     return (
-        <header className={`w-full flex justify-center items-center shadow px-8 sm:px-16   fixed z-50 bg-white top-0  ${sticky ? "h-[100px]" : "h-[150px]"} transition-all duration-300`}
+        <header className={`w-full flex justify-center items-center shadow px-8 sm:px-16   fixed z-50 bg-white dark:bg-slate-400 top-0   ${sticky ? "h-[100px]" : "h-[150px]"} transition-all duration-300`}
         >
             <div className={` w-full flex justify-between items-center`}>
                 <div>
                     <Link to="/">
-                        <img src={Logo} alt="Grocery house" width="150px" height="150px" className="md:w-[200px]" />
+                        <img src={Logo} alt="Grocery house" width="150px" height="150px" className="md:w-[150px]" />
                     </Link>
                 </div>
                 <div className="hidden md:block">
@@ -127,6 +129,9 @@ function Header() {
                             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.1" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
                         </svg>
                     </div>
+                    {/* <div>
+                        <ThemeBtn/>
+                    </div> */}
                     <div className="sm:hidden cursor-pointer" onClick={displayMenu}>
                         <svg className="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="M5 7h14M5 12h14M5 17h14" />
