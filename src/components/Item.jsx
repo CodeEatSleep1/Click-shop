@@ -15,7 +15,7 @@ function Item({
                     window.scrollTo({ top: 120, behavior: "smooth" })
                 }}
             >
-                <img src={image} alt="" width="315px" className="py-5 px-6 h-60 sm:w-[263px] sm:h-52 bg-white" />
+                <img src={image} alt="" width="315px" className="py-5 px-6 min-h-60 sm:w-[263px] sm:min-h-52 bg-white" />
                 <div className="w-[315px] sm:w-[263px]">
                     <p className="p-2  text-[14px] text-wrap  h-12">{title}</p>
                     <p className="px-2 py-2  font-bold text-black">{price}$</p>
