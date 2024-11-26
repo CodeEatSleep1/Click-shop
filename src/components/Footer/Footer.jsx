@@ -25,7 +25,7 @@ function Footer(){
                     <Link to="#"><li className="cursor-pointer hover:underline"onClick={()=>{window.scrollTo({top:0,behavior:"smooth"})}}>Careers</li></Link>
                     <Link to="#"><li className="cursor-pointer hover:underline"onClick={()=>{window.scrollTo({top:0,behavior:"smooth"})}}>Contact Us</li></Link>
                 </ul>
-                <p className="my-3 text-sm  text-white ">Developed by Muhammad Ahsan</p>
+                <p className="my-3 text-sm  text-white ">clickShop - online shoping store</p>
             </div>
         </div>
       </footer>
